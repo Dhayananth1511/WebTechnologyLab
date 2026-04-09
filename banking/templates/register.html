@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - Banking App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+    .error { 
+      background: #fee;
+      color: #c33;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border-left: 4px solid #c33;
+    }
+    input { 
+      display: block; 
+      width: 100%; 
+      padding: 12px; 
+      margin: 10px 0; 
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border 0.3s;
+    }
+    input:focus {
+      outline: none;
+      border: 1px solid #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+    button { 
+      width: 100%;
+      padding: 12px; 
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white; 
+      border: none; 
+      border-radius: 5px;
+      cursor: pointer; 
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    }
+    .link-section {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    .link-section a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .link-section a:hover {
+      text-decoration: underline;
+    }
+    .info-section {
+      background: #f0fff4;
+      border: 1px solid #28a745;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>🏦 BankHub</h1>
+    <p>Create Your Account</p>
+  </div>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <form method="POST">
+    <input type="text" name="username" placeholder="Choose a username" required>
+    <input type="password" name="password" placeholder="Password (min 6 chars)" required>
+    <button type="submit">Create Account</button>
+  </form>
+
+  <div class="link-section">
+    <p>Already have an account? <a href="/login">Login here</a></p>
+  </div>
+
+  <div class="info-section">
+    <strong>✓ Password Requirements:</strong>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+      <li>Minimum 6 characters</li>
+      <li>Usernames are unique</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
